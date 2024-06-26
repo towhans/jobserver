@@ -33,6 +33,7 @@ defmodule JobServer.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:dag, "~> 0.1.0"},
       {:phoenix, "~> 1.6.16"},
       {:swoosh, "~> 1.3"},
       {:telemetry_metrics, "~> 0.6"},

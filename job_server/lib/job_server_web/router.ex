@@ -2,22 +2,13 @@ defmodule JobServerWeb.Router do
   use JobServerWeb, :router
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json", "text"]
   end
 
   scope "/api", JobServerWeb do
     pipe_through :api
+    post "/job", JobController, :create
   end
 
-  # Enables the Swoosh mailbox preview in development.
-  #
-  # Note that preview only shows emails that were sent by the same
-  # node running the Phoenix server.
-  if Mix.env() == :dev do
-    scope "/dev" do
-      pipe_through [:fetch_session, :protect_from_forgery]
-
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
-    end
-  end
 end
+
