@@ -14,6 +14,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 Start web server with:
 
 ```
+mix deps.get
 mix phx.server
 ```
 
